@@ -21,15 +21,15 @@ class LoginPage(BasePage):
 
     def registration(self,login):
 
-        self.browser.find_element(*LoginPageLocators.REGISTER_FORM_NAME).send_keys(login)
-        self.browser.find_element(*LoginPageLocators.REGISTER_FORM_EMAIL).send_keys(f'{login}@gmail.com')
-        self.browser.find_element(*LoginPageLocators.REGISTER_FORM_PASS).send_keys('123456')
-        self.browser.find_element(*LoginPageLocators.REGISTER_FORM_BTN).click()
+        self.driver.find_element(*LoginPageLocators.REGISTER_FORM_NAME).send_keys(login)
+        self.driver.find_element(*LoginPageLocators.REGISTER_FORM_EMAIL).send_keys(f'{login}@gmail.com')
+        self.driver.find_element(*LoginPageLocators.REGISTER_FORM_PASS).send_keys('123456')
+        self.driver.find_element(*LoginPageLocators.REGISTER_FORM_BTN).click()
 
     def login(self, login):
-        self.browser.find_element(*LoginPageLocators.LOGIN_FORM_EMAIL).send_keys(f'{login}@gmail.com')
-        self.browser.find_element(*LoginPageLocators.LOGIN_FORM_PASS).send_keys('123456')
-        self.browser.find_element(*LoginPageLocators.LOGIN_FORM_BTN).click()
+        self.driver.find_element(*LoginPageLocators.LOGIN_FORM_EMAIL).send_keys(f'{login}@gmail.com')
+        self.driver.find_element(*LoginPageLocators.LOGIN_FORM_PASS).send_keys('123456')
+        self.driver.find_element(*LoginPageLocators.LOGIN_FORM_BTN).click()
 
 
 
