@@ -6,7 +6,9 @@ class MainPageLocators():
     SEARCH = (By.XPATH, "/html/body/div[3]/form/table/tbody/tr[4]/td/input")
     SEARCH_BTN = (By.XPATH, "/html/body/div[3]/form/table/tbody/tr[5]/td[1]/button")
     SEARCH_RESULT = (By.XPATH, "/html/body/div[3]/table/tbody/tr/td[1]")
+    COUNT_RESULT = (By.XPATH, "/html/body/div[3]/p")
     LOGIN_SUCCES = (By.XPATH, '//*[@id="fat-menu"]/a')
+
 
 class LoginPageLocators():
     LOGIN_FORM = (By.CSS_SELECTOR, "body > div.content > div.row > div:nth-child(1)")

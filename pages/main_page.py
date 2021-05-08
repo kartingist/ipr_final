@@ -12,11 +12,25 @@ class MainPage(BasePage):
         assert self.is_element_present(*MainPageLocators.LOGIN_LINK), "Кнопка авторизации не найдена"
 
     def check_registration(self, login):
-        self.driver.find_element(*MainPageLocators.SEARCH).send_keys(login.lstrip())
-        self.driver.find_element(*MainPageLocators.SEARCH_BTN).click()
-        assert self.is_element_present(*MainPageLocators.SEARCH_RESULT), "пользователь не найден"
+        assert self.is_element_present(*MainPageLocators.LOGIN_SUCCES), "пользователь не зарегистрирован или уже существует"
+        assert self.driver.find_element(*MainPageLocators.LOGIN_SUCCES).text == login.lstrip(), "авторизован другой пользователь"
 
     def check_login(self, login):
-        assert self.is_element_present(*MainPageLocators.LOGIN_SUCCES), "пользователь не авторизован"
+        assert self.is_element_present(*MainPageLocators.LOGIN_SUCCES), "пользователь не авторизован, не существует или неверный пароль"
         assert self.driver.find_element(*MainPageLocators.LOGIN_SUCCES).text == login.lstrip(), "авторизован другой пользователь"
+
+    def check_user(self, login):
+        self.driver.find_element(*MainPageLocators.SEARCH).send_keys(login.lstrip()+'@gmail.com')
+        self.driver.find_element(*MainPageLocators.SEARCH_BTN).click()
+        count_result=self.driver.find_element(*MainPageLocators.COUNT_RESULT).text
+        if count_result!='Всего:0 ':
+            search_result=self.driver.find_element(*MainPageLocators.SEARCH_RESULT).text
+            return search_result==login.lstrip()+'@gmail.com'
+        else:
+            return False
+
+
+
+
+
 

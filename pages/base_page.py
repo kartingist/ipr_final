@@ -6,7 +6,7 @@ import math
 from selenium.common.exceptions import NoAlertPresentException
 
 class BasePage():
-    def __init__(self, driver, url, timeout=10):
+    def __init__(self, driver, url, timeout=5):
         self.driver = driver
         self.url = url
         self.driver.implicitly_wait(timeout)
