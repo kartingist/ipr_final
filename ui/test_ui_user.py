@@ -4,7 +4,7 @@ import pytest
 import random
 import time
 
-logins=['user'+str(random.randint(10000, 19999))]
+logins=['user'+str(random.randint(30000, 39999))]
 
 #_________________________________________________________________
 #Регистрация

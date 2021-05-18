@@ -3,7 +3,7 @@ import random
 import pytest
 import json
 
-login=['user'+str(random.randint(10000, 19999))]
+login=['user'+str(random.randint(30000, 39999))]
 
 @pytest.mark.parametrize('login', login,  scope='function')
 def test_api_user_registration(login):
@@ -16,7 +16,7 @@ def test_api_user_registration(login):
         assert False, resp['message']
 
 
-@pytest.mark.parametrize('login', ['user'+str(random.randint(10000, 19999))],  scope='function')
+@pytest.mark.parametrize('login', ['user'+str(random.randint(30000, 39999))],  scope='function')
 def test_api_registration_no_pass(login):
     response=requests.post('http://users.bugred.ru/tasks/rest/doregister',
                   data={'email': f'{login}@gmail.com', 'name': f'{login}', 'password': ''})
@@ -42,9 +42,6 @@ def test_api_del_user(login):
     data={'email': f'{login}@gmail.com'}
     response=requests.post('http://users.bugred.ru/tasks/rest/deleteuser',json.dumps(data))
 
-    resp= response.text
-    json.dumps(resp)
-    print(resp['array(1)'])
 
 @pytest.mark.parametrize('login', login)
 @pytest.mark.parametrize('email', [f'{login}@gmail.com', ''])

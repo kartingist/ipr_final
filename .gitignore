@@ -5,3 +5,7 @@
 /__pycache__/
 /test_report/
 /ui/venv/
+/ui/pages/__pycache__/
+/ui/__pycache__/
+/ui/.idea/
+
