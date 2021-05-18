@@ -43,8 +43,7 @@ class LoginPage(BasePage):
     def no_pass(self):
         self.driver.find_element(*LoginPageLocators.LOGIN_FORM_EMAIL).send_keys(f' manager@mail.ru')
         self.driver.find_element(*LoginPageLocators.LOGIN_FORM_BTN).click()
-        assert self.is_element_present(
-            *MainPageLocators.LOGIN_SUCCES) == False, 'пользователь авторизовался не вводя пароль'
+        assert self.is_element_present(*MainPageLocators.LOGIN_SUCCES)==False, 'пользователь авторизовался не вводя пароль'
 
     def manager_login(self):
         self.driver.find_element(*LoginPageLocators.LOGIN_FORM_EMAIL).send_keys(f'manager@mail.ru')

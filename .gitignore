@@ -8,4 +8,8 @@
 /ui/pages/__pycache__/
 /ui/__pycache__/
 /ui/.idea/
+/api/venv/
+/api/pages/__pycache__/
+/api/__pycache__/
+/api/.idea/
 
